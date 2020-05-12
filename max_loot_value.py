@@ -30,6 +30,6 @@ def knapSack(weight_limit, items, n):
 
 # To test above function
 if __name__ == '__main__':
-    knapSackLimit = 10
-    itemsLength = len(items)
-    print(knapSack(knapSackLimit, items, itemsLength))
+    knap_sack_limit = 10
+    items_length = len(items)
+    print(knapSack(knap_sack_limit, items, items_length))
