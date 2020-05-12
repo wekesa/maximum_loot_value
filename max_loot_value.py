@@ -8,7 +8,7 @@ items = [
 ]
 
 
-def knapSack(weight_limit, items, n):
+def knap_sack(weight_limit, items, n):
     # Base Case
     if n == 0 or weight_limit == 0:
         return 0
@@ -16,14 +16,14 @@ def knapSack(weight_limit, items, n):
     # If weight of the nth item is more than Knapsack of capacity
     # W, then this item cannot be included in the optimal solution
     if items[n - 1]["weight"] > weight_limit:
-        return knapSack(weight_limit, items, n - 1)
+        return knap_sack(weight_limit, items, n - 1)
 
     # return the maximum of two cases:
     # (1) nth item included
     # (2) not included
     else:
-        return max(items[n - 1]["value"] + knapSack(weight_limit - items[n - 1]["weight"], items, n - 1),
-                   knapSack(weight_limit, items, n - 1))
+        return max(items[n - 1]["value"] + knap_sack(weight_limit - items[n - 1]["weight"], items, n - 1),
+                   knap_sack(weight_limit, items, n - 1))
 
     # end of function knapSack
 
@@ -32,4 +32,4 @@ def knapSack(weight_limit, items, n):
 if __name__ == '__main__':
     knap_sack_limit = 10
     items_length = len(items)
-    print(knapSack(knap_sack_limit, items, items_length))
+    print(knap_sack(knap_sack_limit, items, items_length))
