@@ -1,4 +1,4 @@
-# A Dynamic Programming based Python Program for 0-1 Knapsack problem
+# A Dynamic Programming based Python Program
 # Returns the maximum value that can be put in a knapsack of capacity W
 items = [
 { "weight": 5, "value": 10 },
