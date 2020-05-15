@@ -1,9 +1,6 @@
-# A Dynamic Programming based Python Program
-# Returns the maximum value that can be put in a knapsack of capacity W
-
-
 # An optimized solution that has a time complexity of O(N*W)
 def knap_sack(weight_limit, items, number_of_items):
+    # Using list comprehension to construct a table filing it with 0s
     K = [[0 for x in range(weight_limit + 1)] for x in range(number_of_items + 1)]
 
     # Build table K[][] in bottom up manner
@@ -17,6 +14,7 @@ def knap_sack(weight_limit, items, number_of_items):
             else:
                 K[item][weight] = K[item - 1][weight]
 
+    # Return the maximum value that can be looted
     return K[number_of_items][weight_limit]
 
 
